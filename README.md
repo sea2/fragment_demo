@@ -4,9 +4,8 @@
    * replace适合取代类型的，其他的显隐自己根据需求使用
    此次使用viewpage,和fragment的show，hide,replace,popBackStack
    
-   
-   
-   
+   fragment和activity的交互
+   
    有关于lambda表达式的处理
         compileOptions {
         targetCompatibility 1.8
