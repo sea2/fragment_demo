@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+        <!-- 普通页面背景 -->
+        <color name="bg_common">#f4f4f4</color>
+        <color name="stand_common">#ffaf30</color>
+        <color name="stand_more_common">#ef7030</color>
+        <color name="bg_press">#e1e1e1</color>
+        <color name="color_66c2cb">#66c2cb</color>
+        <color name="color_00c2cb">#00c2cb</color>
+
+        <color name="transparent">#00000000</color>
+        <color name="white">#ffffff</color>
+        <color name="color_theme">#ffc100</color>
+        <color name="black">#000000</color>
+        <color name="black_rip_80">#80000000</color>
+        <color name="black_rip_20">#20000000</color>
+        <color name="color_theme_press">#80ffc100</color>
+        <color name="ripple">#1f000000</color>
+        <color name="red_theme">#ff1f3f</color>
+        <color name="green_theme">#00ad22</color>
+        <color name="stop_theme">#999999</color>
+
+        <!-- 文本色系 -->
+        <color name="tv_color_33">#333333</color>
+        <color name="tv_color_66">#666666</color>
+        <color name="tv_color_99">#999999</color>
+        <color name="tv_color_cc">#cccccc</color>
+        <color name="tv_color_4d4d4d">#4d4d4d</color>
+        <color name="tv_color_808080">#808080</color>
+        <color name="tv_color_b3b3b3">#b3b3b3</color>
+
+        <!-- 分隔线背景 -->
+        <color name="bg_split_line">#e1e1e1</color>
+        <color name="bg_line">#e6e6e6</color>
+
+
+        <!-- 主页面底栏字体颜色 -->
+        <color name="footer_text_color_normal">@color/tv_color_808080</color>
+        <color name="footer_text_color_selected">@color/color_theme</color>
+
+
+        <color name="title_foot_color">#999999</color>
+
+
+        <!--侧边栏-->
+        <color name="color_3b99fc">#3b99fc</color>
+        <color name="color_00a4ff">#00a4ff</color>
+        <color name="color_af70ff">#af70ff</color>
+        <color name="color_ff5a81">#ff5a81</color>
+        <color name="color_ffce33">#ffce33</color>
+        <color name="color_52e28c">#52e28c</color>
+        <color name="color_afaffa">#AFAFAF</color>
+        <color name="color_f99505">#F99503</color>
+        <color name="gray_color">#ffe8ecef</color>
+        <color name="bg_sort_color">#EDEDED</color>
+
+        <color name="red">#FF0000</color><!--红色 -->
+        <color name="yellow">#FFFF00</color><!--黄色 -->
+        <color name="gold">#FFD700</color><!--金色 -->
+        <color name="pink">#FFC0CB</color><!--粉红色 -->
+        <color name="lightpink">#FFB6C1</color><!--亮粉红色 -->
+        <color name="orange">#FFA500</color><!--橙色 -->
+        <color name="blue">#0000FF</color><!--蓝色 -->
+
+
+        <color name="psts_background_tab_pressed">#1AFFFFFF</color>
+
+
+</resources>
