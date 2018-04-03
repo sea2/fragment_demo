@@ -47,7 +47,7 @@ public class ViewPageFragmentRadioGroupActivity extends BaseActivty {
         mFragmentList.add(mFragmentThree);
         mFragmentList.add(mFragmentFour);
         homePageFragmentAdapter = new FragmentAdapter(getSupportFragmentManager(), mFragmentList);
-        viewpagercontainer.setOffscreenPageLimit(3);
+        viewpagercontainer.setOffscreenPageLimit(1);
         viewpagercontainer.setAdapter(homePageFragmentAdapter);
        //是否能滑动适合少量fragment
         viewpagercontainer.setScroll(true);

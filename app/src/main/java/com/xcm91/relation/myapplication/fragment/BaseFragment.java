@@ -1,7 +1,6 @@
 package com.xcm91.relation.myapplication.fragment;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -14,7 +13,8 @@ import android.view.ViewGroup;
  */
 
 public abstract class BaseFragment extends LazyFragment {
-    String tag = this.getClass().getSimpleName();
+    protected String tag = this.getClass().getSimpleName();
+    protected View rootView = null;
 
     @Override
     public void onAttach(Context context) {
@@ -25,10 +25,10 @@ public abstract class BaseFragment extends LazyFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i(tag,  "onCreate");
+        Log.i(tag, "onCreate");
     }
 
-    @Nullable
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.i(tag, "onCreateView");
@@ -36,11 +36,11 @@ public abstract class BaseFragment extends LazyFragment {
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.i(tag, "onActivityResult");
-        super.onActivityResult(requestCode, resultCode, data);
-    }
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        Log.i(tag, "onActivityCreated");
 
+    }
 
     @Override
     public void onStart() {
@@ -59,9 +59,8 @@ public abstract class BaseFragment extends LazyFragment {
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        Log.i(tag, "setUserVisibleHint"+isVisibleToUser);
+        Log.i(tag, "setUserVisibleHint" + isVisibleToUser);
     }
-
 
 
     @Override
@@ -87,6 +86,8 @@ public abstract class BaseFragment extends LazyFragment {
     @Override
     public void onDestroyView() {
         Log.i(tag, "onDestroyView");
+        if (rootView != null && rootView.getParent() != null)
+            ((ViewGroup) rootView.getParent()).removeView(rootView);
         super.onDestroyView();
     }
 

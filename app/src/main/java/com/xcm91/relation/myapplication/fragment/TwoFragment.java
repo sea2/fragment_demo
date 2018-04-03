@@ -49,11 +49,11 @@ public class TwoFragment extends BaseFragment implements MainActivity.OnActivity
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-
+        if (rootView == null)
+            inflater.inflate(R.layout.fragment_blank, container, false);
         isPrepared = true;
         lazyLoad();
-        return inflater.inflate(R.layout.fragment_blank, container, false);
+        return rootView;
     }
 
 

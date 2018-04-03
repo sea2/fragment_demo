@@ -67,10 +67,11 @@ public class ThreeFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
+        if(rootView==null)
+            rootView=  inflater.inflate(R.layout.fragment_three, container, false);
         isPrepared = true;
         lazyLoad();
-        return inflater.inflate(R.layout.fragment_three, container, false);
+        return rootView;
     }
 
     @Override

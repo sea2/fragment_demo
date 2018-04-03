@@ -64,7 +64,7 @@ public class FragmentReplaceActivity extends BaseActivty {
             }
         });
 
-
+        replaceFragment(R.id.fl_content,mOneFragment);
 
     }
 
