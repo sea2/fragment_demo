@@ -30,7 +30,7 @@ public abstract class BaseFragment extends LazyFragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.i(tag, "onCreateView");
         return super.onCreateView(inflater, container, savedInstanceState);
     }
@@ -77,6 +77,13 @@ public abstract class BaseFragment extends LazyFragment {
     }
 
     @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.i(tag, "onSaveInstanceState"+outState);
+
+    }
+
+    @Override
     public void onStop() {
         Log.i(tag, "onStop");
         super.onStop();
@@ -104,5 +111,6 @@ public abstract class BaseFragment extends LazyFragment {
         Log.i(tag, "onDetach");
         super.onDetach();
     }
+
 
 }

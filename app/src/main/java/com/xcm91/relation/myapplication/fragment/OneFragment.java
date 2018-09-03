@@ -7,8 +7,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
-import com.google.android.gms.plus.PlusOneButton;
 import com.xcm91.relation.myapplication.R;
 
 
@@ -22,7 +22,7 @@ public class OneFragment extends BaseFragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private PlusOneButton mPlusOneButton;
+    private Button mPlusOneButton;
     String tag = this.getClass().getSimpleName();
     private OnFragmentInteractionListener mListener;
     private boolean isPrepared;
@@ -61,12 +61,13 @@ public class OneFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
         // Inflate the layout for this fragment
         if (rootView == null)
             rootView = inflater.inflate(R.layout.fragment_plus_one, container, false);
 
         //Find the +1 button
-        mPlusOneButton = (PlusOneButton) rootView.findViewById(R.id.plus_one_button);
+        mPlusOneButton = (Button) rootView.findViewById(R.id.plus_one_button);
 
         isPrepared = true;
         lazyLoad();
@@ -77,7 +78,6 @@ public class OneFragment extends BaseFragment {
     public void onResume() {
         super.onResume();
         // Refresh the state of the +1 button each time the activity receives focus.
-        mPlusOneButton.initialize(PLUS_ONE_URL, PLUS_ONE_REQUEST_CODE);
     }
 
     @Override

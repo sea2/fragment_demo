@@ -47,7 +47,9 @@ public class ViewPageFragmentRadioGroupActivity extends BaseActivty {
         mFragmentList.add(mFragmentThree);
         mFragmentList.add(mFragmentFour);
         homePageFragmentAdapter = new FragmentAdapter(getSupportFragmentManager(), mFragmentList);
-        viewpagercontainer.setOffscreenPageLimit(1);
+        //决定初始化的时候加载fragment的个数 viewpager是默认预加载下一页的界面的。viewpager提供了一个设置预加载页面数量的方法，
+        // 那就是setOffscreenPageLimit()。默认不设置数量的情况下预加载下一页
+        viewpagercontainer.setOffscreenPageLimit(2);
         viewpagercontainer.setAdapter(homePageFragmentAdapter);
        //是否能滑动适合少量fragment
         viewpagercontainer.setScroll(true);

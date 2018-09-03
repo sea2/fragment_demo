@@ -13,8 +13,9 @@ import com.xcm91.relation.myapplication.fragment.TwoFragment;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
- *每次fragment切换调用 onHiddenChanged
+ * 每次fragment切换调用 onHiddenChanged
  */
 public class FragmentShowHideActivity extends BaseActivty {
 
@@ -26,6 +27,10 @@ public class FragmentShowHideActivity extends BaseActivty {
     private ThreeFragment mFragmentThree;
     private FourFragment mFragmentFour;
     private List<Fragment> mFragmentList = new ArrayList<>();
+    String ONE_FRAGMENT_KEY = "one_fragment__key";
+    String TWO_FRAGMENT_KEY = "two__fragment_key";
+    String THREE_FRAGMENT_KEY = "three__fragment_key";
+    String FOUR_FRAGMENT_KEY = "four__fragment_key";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +40,18 @@ public class FragmentShowHideActivity extends BaseActivty {
         this.flcontent = (FrameLayout) findViewById(R.id.fl_content);
         group = (RadioGroup) findViewById(R.id.group);
 
-        mOneFragment = new OneFragment();
-        mTwoFragment = new TwoFragment();
-        mFragmentThree = new ThreeFragment();
-        mFragmentFour = new FourFragment();
+
+        if (savedInstanceState != null) {
+            /*获取保存的fragment  没有的话返回null*/
+            mOneFragment = (OneFragment) getSupportFragmentManager().getFragment(savedInstanceState, ONE_FRAGMENT_KEY);
+            mTwoFragment = (TwoFragment) getSupportFragmentManager().getFragment(savedInstanceState, TWO_FRAGMENT_KEY);
+            mFragmentThree = (ThreeFragment) getSupportFragmentManager().getFragment(savedInstanceState, THREE_FRAGMENT_KEY);
+            mFragmentFour = (FourFragment) getSupportFragmentManager().getFragment(savedInstanceState, FOUR_FRAGMENT_KEY);
+        }
+        if (mOneFragment == null) mOneFragment = new OneFragment();
+        if (mTwoFragment == null) mTwoFragment = new TwoFragment();
+        if (mFragmentThree == null) mFragmentThree = new ThreeFragment();
+        if (mFragmentFour == null) mFragmentFour = new FourFragment();
         mFragmentList.add(mOneFragment);
         mFragmentList.add(mTwoFragment);
         mFragmentList.add(mFragmentThree);
@@ -67,6 +80,26 @@ public class FragmentShowHideActivity extends BaseActivty {
         });
 
         setPageFragment(1);
+    }
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        /*fragment不为空时 保存*/
+        if (mOneFragment != null) {
+            getSupportFragmentManager().putFragment(outState, ONE_FRAGMENT_KEY, mOneFragment);
+        }
+        if (mTwoFragment != null) {
+            getSupportFragmentManager().putFragment(outState, TWO_FRAGMENT_KEY, mTwoFragment);
+        }
+        if (mFragmentThree != null) {
+            getSupportFragmentManager().putFragment(outState, THREE_FRAGMENT_KEY, mFragmentThree);
+        }
+        if (mFragmentFour != null) {
+            getSupportFragmentManager().putFragment(outState, FOUR_FRAGMENT_KEY, mFragmentFour);
+        }
+
+        super.onSaveInstanceState(outState);
     }
 
 

@@ -100,7 +100,7 @@ public abstract class BaseActivty extends FragmentActivity {
      * @param fragment
      */
     public void hideFragment(Fragment fragment) {
-        Log.e("hideFragment", fragment.isAdded() + "--" + fragment.isHidden());
+        Log.i("hideFragment", fragment.isAdded() + "--" + fragment.isHidden());
         if (fragment != null && fragment.isAdded() && (!fragment.isHidden())) {
             FragmentManager fragmentManager = this.getSupportFragmentManager();
             FragmentTransaction ft = fragmentManager.beginTransaction();
