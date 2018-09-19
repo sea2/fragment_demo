@@ -2,10 +2,13 @@ package com.xcm91.relation.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-public class MainActivity extends BaseActivty {
+import com.xcm91.relation.myapplication.fragment.OneFragment;
+
+public class MainActivity extends BaseActivty  {
 
     private android.widget.FrameLayout flcontainer;
     private OnActivityListener mOnActivityListener;
@@ -29,6 +32,7 @@ public class MainActivity extends BaseActivty {
         this.btnstart2 = (Button) findViewById(R.id.btn_start2);
         this.btnstart1 = (Button) findViewById(R.id.btn_start1);
         this.flcontainer = (FrameLayout) findViewById(R.id.fl_container);
+        Fragment oneFragment = new OneFragment();
 
 
         btnstart1.setOnClickListener(view -> {
@@ -50,6 +54,7 @@ public class MainActivity extends BaseActivty {
 
 
     }
+
 
 
     public interface OnActivityListener {

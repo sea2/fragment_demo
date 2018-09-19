@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.xcm91.relation.myapplication.fragment.FourFragment;
 import com.xcm91.relation.myapplication.fragment.OneFragment;
@@ -19,7 +20,7 @@ import java.util.List;
 /**
  *每次fragment切换调用 懒加载的 lazyLoad
  */
-public class ViewPageFragmentRadioGroupActivity extends BaseActivty {
+public class ViewPageFragmentRadioGroupActivity extends BaseActivty implements OneFragment.OnFragmentInteractionListener{
     private RadioGroup group;
     private NoScrollViewPager viewpagercontainer;
     private android.widget.LinearLayout llmaincontent;
@@ -110,4 +111,8 @@ public class ViewPageFragmentRadioGroupActivity extends BaseActivty {
     }
 
 
+    @Override
+    public void onFragmentInteraction(int type) {
+        Toast.makeText(this, "触发：" + type, Toast.LENGTH_LONG).show();
+    }
 }

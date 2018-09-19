@@ -1,8 +1,8 @@
 package com.xcm91.relation.myapplication.fragment;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,9 +27,6 @@ public class OneFragment extends BaseFragment {
     private OnFragmentInteractionListener mListener;
     private boolean isPrepared;
 
-    public OneFragment() {
-        // Required empty public constructor
-    }
 
     /**
      * Use this factory method to create a new instance of
@@ -68,10 +65,20 @@ public class OneFragment extends BaseFragment {
 
         //Find the +1 button
         mPlusOneButton = (Button) rootView.findViewById(R.id.plus_one_button);
-
+        mPlusOneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onButtonPressed(2);
+            }
+        });
         isPrepared = true;
         lazyLoad();
         return rootView;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
     }
 
     @Override
@@ -103,9 +110,9 @@ public class OneFragment extends BaseFragment {
 
 
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
+    public void onButtonPressed(int type) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+            mListener.onFragmentInteraction(type);
         }
     }
 
@@ -114,8 +121,6 @@ public class OneFragment extends BaseFragment {
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
-        } else {
-            //  throw new RuntimeException(context.toString()                    + " must implement OnFragmentInteractionListener");
         }
     }
 
@@ -136,8 +141,7 @@ public class OneFragment extends BaseFragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void onFragmentInteraction(int type);
     }
 
 }
