@@ -42,7 +42,7 @@ public class FragmentShowHideActivity extends BaseActivty {
 
 
         if (savedInstanceState != null) {
-            /*获取保存的fragment  没有的话返回null*/
+            *//*获取保存的fragment  没有的话返回null*//*
             mOneFragment = (OneFragment) getSupportFragmentManager().getFragment(savedInstanceState, ONE_FRAGMENT_KEY);
             mTwoFragment = (TwoFragment) getSupportFragmentManager().getFragment(savedInstanceState, TWO_FRAGMENT_KEY);
             mFragmentThree = (ThreeFragment) getSupportFragmentManager().getFragment(savedInstanceState, THREE_FRAGMENT_KEY);
